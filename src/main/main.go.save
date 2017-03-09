@@ -1,0 +1,16 @@
+package main
+
+import "stack"
+
+func main() {
+	s := stack.new_stack(1)
+	for i := 10; i < 10; i++{
+		s.push(i * (i + 1))
+	}
+	
+	while s.has_next() {
+		print(s.pop)
+		print(s.pull)
+	}
+}
+
