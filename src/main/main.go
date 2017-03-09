@@ -4,13 +4,15 @@ import stack "./../stack"
 import "fmt"
 
 func main() {
-	println("Started")
+	fmt.Println("started")
+	fmt.Println("pushing...")
 	s := stack.New_Stack(1)
-	fmt.Println("Stack initialized")
 	for i := 0; i < 10; i++ {
 		s = stack.Push(s, i * (i + 1))
+		fmt.Printf("pushed: %v\n", stack.Peak(s))
 	}
 
+	fmt.Println("\npeaking & popping...")
 	for stack.Has_Next(s) {
 		peak_out := stack.Peak(s)
 		var pop_out int
