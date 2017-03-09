@@ -1,10 +1,16 @@
 package main
 
 import stack "./../stack"
+import singly "./../linkedlist/singly"
 import "fmt"
 
 func main() {
-	fmt.Println("started")
+	stack_test()
+	singly_linked_list_test()
+}
+
+func stack_test(){
+	fmt.Println("started stack demonstation")
 	fmt.Println("pushing...")
 	s := stack.New_Stack(1)
 	for i := 0; i < 10; i++ {
@@ -20,4 +26,11 @@ func main() {
 		fmt.Printf("peak: %v\n", peak_out)
 		fmt.Printf("pop:  %v\n", pop_out)
 	}
+}
+
+func singly_linked_list_test() {
+	fmt.Println("started singly linked list demonstration...")
+	fmt.Println("adding nodes...")
+	l := singly.New_List(1)
+	fmt.Printf("first node: %v\n", singly.Get_Val_At(l, 0))
 }
