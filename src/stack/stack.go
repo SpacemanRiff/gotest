@@ -18,9 +18,7 @@ func Peak(head Element) int{
 }
 
 func Pop(head Element) (int, Element){
-	return_val := head.val
-	temp := Element{val: head.next.val, next: head.next.next}
-	return return_val, temp
+	return head.val, Element{val: head.next.val, next: head.next.next}
 }
 
 func Has_Next(head Element) bool{
