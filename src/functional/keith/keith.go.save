@@ -1,0 +1,15 @@
+package main
+
+import(
+	"os"
+	"strconv"
+	"bufio"
+)
+
+func main() {
+	reader := bufio.NewReader(os.Stdin)
+	print("Enter text: ")
+	input, _ := reader.ReadString('\n')
+	number, _ := strconv.ParseInt(input, 10, 
+	print(number)
+}
