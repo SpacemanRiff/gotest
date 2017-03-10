@@ -26,6 +26,7 @@ func stack_test(){
 		fmt.Printf("peak: %v\n", peak_out)
 		fmt.Printf("pop:  %v\n", pop_out)
 	}
+	fmt.Println()
 }
 
 func singly_linked_list_test() {
@@ -33,4 +34,12 @@ func singly_linked_list_test() {
 	fmt.Println("adding nodes...")
 	l := singly.New_List(1)
 	fmt.Printf("first node: %v\n", singly.Get_Val_At(l, 0))
+	for i := 0; i < 10; i++ {
+		l = singly.Add_Node(l, 11 - i)
+		fmt.Printf("%v\n", 11-i)
+	}
+
+	for i:= 0; i <10; i++ {
+		fmt.Printf("Value at %v: %v\n", i, singly.Get_Val_At(l, i))
+	}
 }
