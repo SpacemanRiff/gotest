@@ -4,16 +4,17 @@ import(
 	. "./../intfunc"
 	. "./../uinput"
 	"fmt"
-	"strconv"
 )
 
 func main(){
 	number := Get_int_put()
 
-	check_smith(Parse_num_to_list(number), Fact_prime(number))
+	Check_smith(number)
 }
 
-func check_smith(num_list []int, fact_list []int){
+func Check_smith(number int){
+	num_list := Parse_num_to_list(number)
+	fact_list := Fact_prime(number)
 	var fact_dig_list = make([]int,0)
 
 	for _, n := range fact_list{
@@ -30,17 +31,11 @@ func check_smith(num_list []int, fact_list []int){
 	num_sum := Sum_list(num_list)
 	fact_sum := Sum_list(fact_dig_list)
 
-	print_sums(num_list, num_sum)
-	print_sums(fact_dig_list, fact_sum)
-}
-
-func print_sums(list []int, sum int){
-	for i, n := range list{
-		if i < len(list)-1{
-			fmt.Print(strconv.Itoa(n) + " + ")
-		}else{
-			fmt.Print(strconv.Itoa(n) + " = ")
-		}
+	Print_sums(num_list, num_sum)
+	Print_sums(fact_dig_list, fact_sum)
+	if num_sum == fact_sum{
+		fmt.Printf("%v is a smith number.\n", number)
+	}else{
+		fmt.Printf("%v is not a smith number.\n", number)
 	}
-	fmt.Print(strconv.Itoa(sum) + "\n")
 }

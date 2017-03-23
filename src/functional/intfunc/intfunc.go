@@ -3,6 +3,7 @@ package intfunc
 import(
 	"strconv"
 	"math"
+	"fmt"
 )
 
 func Parse_num_to_list(number int) []int{
@@ -37,5 +38,16 @@ func Sum_list(list []int) int{
 		output = output + n
 	}
 	return output
+}
+
+func Print_sums(list []int, sum int){
+	for i, n := range list{
+		if i < len(list)-1 {
+			fmt.Print(strconv.Itoa(n) + " + ")
+		}else{
+			fmt.Print(strconv.Itoa(n) + " = ")
+		}
+	}
+	fmt.Print(strconv.Itoa(sum) + "\n")
 }
 
