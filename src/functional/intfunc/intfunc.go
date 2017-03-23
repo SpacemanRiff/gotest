@@ -2,6 +2,7 @@ package intfunc
 
 import(
 	"strconv"
+	"math"
 )
 
 func Parse_num_to_list(number int) []int{
@@ -18,11 +19,14 @@ func Fact_prime(number int) []int{
 	if(number%2 == 0){
 		output = append(output, 2)
 	}
-	for i := 3; i < int(number/2); i+=2{
+	for i := 3; i < int(math.Sqrt(float64(number))); i+=2{
 		for(number % i == 0){
 			output = append(output, i)
 			number = number / i
 		}
+	}
+	if(number > 2){
+		output = append(output, number)
 	}
 	return output
 }
