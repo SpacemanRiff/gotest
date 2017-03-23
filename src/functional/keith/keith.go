@@ -1,35 +1,15 @@
 package main
 
 import(
-	"os"
 	"strconv"
-	"bufio"
+	. "./../intfunc"
+	. "./../uinput"
 )
 
 func main() {
-	//set up user input stuff
-	scanner := bufio.NewScanner(os.Stdin)
+	number := Get_int_put()
 
-	//ask user for input
-	print("Enter text: ")
-	scanner.Scan()
-	input := scanner.Text()
-
-	//convert input to string
-	//[TO-DO]: input verification (i.e. make sure they put in a number)
-	number, _ := strconv.Atoi(input)
-
-	//start the keithing
-	check_keith(number, parse_num_to_list(number))
-}
-
-func parse_num_to_list(number int) []int{
-	temp := strconv.Itoa(number)
-	var output = make([]int, len(temp))
-	for i, r := range temp{
-		output[i], _ = strconv.Atoi(string(r))
-	}
-	return output
+	check_keith(number, Parse_num_to_list(number))
 }
 
 func check_keith(check_val int, num_list []int){
