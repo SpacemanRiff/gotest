@@ -6,7 +6,7 @@ import "fmt"
 
 func main() {
 	stack_test()
-	singly_linked_list_test()
+	//singly_linked_list_test()
 }
 
 func stack_test(){
