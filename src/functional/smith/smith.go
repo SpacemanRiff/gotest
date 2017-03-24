@@ -1,4 +1,4 @@
-package main
+package smith
 
 import(
 	. "./../intfunc"
@@ -9,10 +9,10 @@ import(
 func main(){
 	number := Get_int_put()
 
-	Check_smith(number)
+	Check_smith(number, true)
 }
 
-func Check_smith(number int){
+func Check_smith(number int, print_sums bool){
 	num_list := Parse_num_to_list(number)
 	fact_list := Fact_prime(number)
 	var fact_dig_list = make([]int,0)
@@ -31,11 +31,15 @@ func Check_smith(number int){
 	num_sum := Sum_list(num_list)
 	fact_sum := Sum_list(fact_dig_list)
 
-	Print_sums(num_list, num_sum)
-	Print_sums(fact_dig_list, fact_sum)
+	if print_sums{
+		Print_sums(num_list, num_sum)
+		Print_sums(fact_dig_list, fact_sum)
+	}
 	if num_sum == fact_sum{
 		fmt.Printf("%v is a smith number.\n", number)
 	}else{
-		fmt.Printf("%v is not a smith number.\n", number)
+		if print_sums{
+			fmt.Printf("%v is not a smith number.\n", number)
+		}
 	}
 }

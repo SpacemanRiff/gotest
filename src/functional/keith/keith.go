@@ -1,4 +1,4 @@
-package main
+package keith
 
 import(
 	. "./../intfunc"
@@ -9,7 +9,7 @@ import(
 func main() {
 	number := Get_int_put()
 
-	Check_keith(number, false)
+	Check_keith(number, true)
 }
 
 func Check_keith(check_val int, print_sums bool){
@@ -29,7 +29,9 @@ func check_keith(check_val int, num_list []int, print_sums bool){
 	} else if(list_sum == check_val){
 		fmt.Printf("%v is a keith number\n", check_val)
 	} else {
-		fmt.Printf("%v is not a keith number\n", check_val)
+		if print_sums{
+			fmt.Printf("%v is not a keith number\n", check_val)
+		}
 	}
 }
 
